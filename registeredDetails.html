@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Apply blur effect to email and phone number */
+        td.blurred {
+            filter: blur(4px);
+        }
+    </style>
+</head>
+<body>
+    <h2>Registered Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Email Address</th>
+                <th>Phone Number</th>
+                <th>Student Roll Number</th>
+                <th>Father's Name</th>
+                <th>Book Issued Name</th>
+            </tr>
+        </thead>
+        <tbody id="registeredDetailsBody">
+            <!-- Registered details will be populated here using JavaScript -->
+        </tbody>
+    </table>
+    <script>
+        // JavaScript code to fetch and populate registered details from server
+        async function fetchRegisteredDetails() {
+            try {
+                const response = await fetch('/registeredDetails');
+                const data = await response.json();
+                const registeredDetailsBody = document.getElementById('registeredDetailsBody');
+                registeredDetailsBody.innerHTML = ''; // Clear previous content
+                data.forEach(student => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${student.studentName}</td>
+                        <td class="blurred">${student.emailAddress}</td>
+                        <td class="blurred">${student.phoneNumber}</td>
+                        <td>${student.studentRollNumber}</td>
+                        <td>${student.fatherName}</td>
+                        <td>${student.bookIssuedName}</td>
+                    `;
+                    registeredDetailsBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching registered details:', error);
+                alert('Error fetching registered details');
+            }
+        }
+        fetchRegisteredDetails(); // Call the function to fetch registered details when the page loads
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management Signup</title>
+    <style>
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #f03800;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #cb7359;
+        }
+        
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body style="background-image:url('https://images.pexels.com/photos/8850748/pexels-photo-8850748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); 
+    background-image:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    ">
+    <div class="container" >
+        <h2>Library Management Signup</h2>
+        <!-- <img src="libimage4.jpg" alt="image"> -->
+        <form action="/signup" method="POST">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" required>
+            <br>
+            <label for="emailAddress">Email Address:</label>
+            <input type="email" id="emailAddress" name="emailAddress" required>
+            <br>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required>
+            <br>
+            <label for="studentRollNumber">Student Roll Number:</label>
+            <input type="text" id="studentRollNumber" name="studentRollNumber" required>
+            <br>
+            <label for="fatherName">Father Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+            <br>
+            <label for="bookIssuedName">Book Issued Name:</label>
+            <input type="text" id="bookIssuedName" name="bookIssuedName" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

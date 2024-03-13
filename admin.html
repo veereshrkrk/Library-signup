@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #f03800;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #cb7359;
+        }
+    </style>
+</head>
+<body  style="background-image:url('https://images.pexels.com/photos/8850748/pexels-photo-8850748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); 
+background-image:cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 100vh;
+">
+    
+    <form action="/admin" method="POST">
+        <h1>Admin Login</h1>
+        <label for="adminPassword">Admin Password:</label>
+        <input type="password" id="adminPassword" name="adminPassword" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
